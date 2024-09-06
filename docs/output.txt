@@ -1,0 +1,75 @@
+Counter: 4
+Counter: 3
+Counter: 2
+Counter: 1
+Counter: 0
+Counter: 9
+␛[0;31mE (20324) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:␛[0m
+␛[0;31mE (20324) task_wdt:  - IDLE1 (CPU 1)␛[0m
+␛[0;31mE (20324) task_wdt: Tasks currently running:␛[0m
+␛[0;31mE (20324) task_wdt: CPU 0: IDLE0␛[0m
+␛[0;31mE (20324) task_wdt: CPU 1: rotaryTask␛[0m
+␛[0;31mE (20324) task_wdt: Print CPU 1 backtrace␛[0m
+
+
+Backtrace: 0x40081622:0x3FFB15C0 0x40083839:0x3FFB15E0 0x400D0EF4:0x3FFB5470 0x40085FB1:0x3FFB5490
+
+Counter: 8
+Counter: 7
+Counter: 6
+Counter: 5
+Counter: 6
+Counter: 7
+Counter: 8
+Counter: 9
+Counter: 0
+
+Third
+=====
+␛[0;32mI (304) main_task: Calling app_main()␛[0m
+␛[0;32mI (304) gpio: GPIO[26]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 ␛[0m
+␛[0;32mI (304) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 ␛[0m
+␛[0;32mI (314) main_task: Returned from app_main()␛[0m
+Counter: 1    <== missing Counter: 0
+Counter: 2
+Counter: 3
+Counter: 4
+Counter: 5
+Counter: 6
+Counter: 7
+Counter: 8
+Counter: 9
+Counter: 0
+Counter: 1
+Counter: 2
+Counter: 3
+Counter: 4
+Counter: 5
+
+Compiling .pio/build/esp32doit-devkit-v1/src/main.c.o
+src/main.c: In function 'app_main':
+src/main.c:236:36: warning: passing argument 2 of 'gpio_isr_handler_add' from incompatible pointer type [-Wincompatible-pointer-types]
+  236 |   gpio_isr_handler_add(GPIO_ENC_A, rotaryHandler, NULL);
+      |                                    ^~~~~~~~~~~~~
+      |                                    |
+      |                                    void (*)(void)
+
+Fourth
+======
+␛[0;32mI (304) main_task: Calling app_main()␛[0m
+␛[0;32mI (304) gpio: GPIO[26]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 ␛[0m
+␛[0;32mI (304) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 ␛[0m
+Counter: 0
+␛[0;32mI (314) main_task: Returned from app_main()␛[0m
+Counter: 1
+Counter: 2
+Counter: 3
+Counter: 4
+Counter: 3
+Counter: 2
+Counter: 1
+Counter: 0
+Counter: 9
+Counter: 8
+Counter: 7
+Counter: 8
